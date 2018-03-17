@@ -1,1 +1,1 @@
-from pymongo import Pymongo 
+from .mongo import PyMongo 
