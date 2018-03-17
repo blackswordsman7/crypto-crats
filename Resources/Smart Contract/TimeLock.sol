@@ -11,13 +11,14 @@ contract timeLock {
     mapping (address => accountData) accounts;
 
     function payIn(uint lockTimeS) payable {
-        // Send amount (in Wei) when calling this function.
-        // The amount will then be placed in a locked account
-        // and the funds will be released once the indicated lock time in seconds
-        // passed and can only be retrieved by the same account which was
-        // depositing them. 
-        // " Highlighting the intrinsic security model offered by a blockchain system like Ethereum"
-
+        /*
+	Send amount (in Wei) when calling this function.
+        The amount will then be placed in a locked account
+        and the funds will be released once the indicated lock time in seconds
+        passed and can only be retrieved by the same account which was
+        depositing them. 
+         " Highlighting the intrinsic security model offered by a blockchain system like Ethereum"
+	*/
         uint amount = msg.value;            //Send the required money through Wei
         
         payOut();                           // Payout Function is called to state the Reason    
