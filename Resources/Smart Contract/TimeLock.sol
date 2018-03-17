@@ -1,5 +1,6 @@
-```
-contract TimeLock {
+pragma solidity ^0.4.0;
+
+contract timeLock {
     // custom data structure to hold locked funds and time
     struct accountData {
         uint balance;
@@ -50,4 +51,3 @@ contract TimeLock {
         return now;                                         // get the current status
     }
 }
-```
