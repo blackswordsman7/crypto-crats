@@ -2,7 +2,7 @@
 
 ### Idea at glance
 
-We aim to revolutionise the farming sector by introducing an investment-token based model which will help farmers in raising capital against their land and production output value.
+We aim to revolutionise the farming sector by introducing an investment-token based model which will help farmers in raising capital against their land and production output value. We aim to create a decetralized echo-system for agriculture. 
 
 ### Current challenges:
 
@@ -19,3 +19,7 @@ Our system will link users (investors) directly with farmers. Farmers can ask fo
 This network will be implemented on a blockchain system, where transactions and smart contracts will take place between user and farmer.  Tokens will be generated which will contain virtual land area and amount of investment and expected profit. And these 3 parameters will collectively decide the value of the token.
 
 Users can buy and sell these tokens depending upon supply and demand.
+
+### Complete Idea Link 
+
+To completely understand the idea and implementation model, please visit https://www.powtoon.com/c/cctPL4P3Jgu/1/m for the power point presentation. 
