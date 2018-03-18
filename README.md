@@ -34,7 +34,7 @@ Users/Investors can buy and sell these tokens depending upon supply and demand.
 
 ### Resources
 
-* To completely understand the idea and implementation model, please visit https://www.powtoon.com/c/cctPL4P3Jgu/1/m for the power point presentation.
+* To completely understand the idea and implementation model, please visit https://www.slideshare.net/SaurabhDaalia/kissan-mitra-team-cryptocrats for the power point presentation.
 * Prototype Url: https://crypto-crats.herokuapp.com [KrishiMitra]
 
 ### Team Members
