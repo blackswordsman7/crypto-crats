@@ -4,6 +4,8 @@
 
 We aim to revolutionise the farming sector by introducing an investment-token based model which will help farmers in raising capital against their land and production output value. We aim to create a decetralized echo-system for agriculture. 
 
+![image_model](https://github.com/Parassharmaa/crypto-crats/blob/master/docs/model-diagram%5BINITIAL%20STATE%5D.jpg)
+
 ### Current challenges:
 
 Farmers find it difficult to raise capital for investing money and resources in there land for growing new crop. For that they have to give there land papers as security against loan to zamindars.
@@ -20,8 +22,11 @@ This network will be implemented on a blockchain system, where transactions and 
 
 Users can buy and sell these tokens depending upon supply and demand.
 
-### Complete Idea Link 
+![image_model2](https://github.com/Parassharmaa/crypto-crats/blob/master/docs/eng_model.jpg)
 
-To completely understand the idea and implementation model, please visit https://www.powtoon.com/c/cctPL4P3Jgu/1/m for the power point presentation. 
+### Resources
+
+* To completely understand the idea and implementation model, please visit https://www.powtoon.com/c/cctPL4P3Jgu/1/m for the power point presentation.
+* Prototype Url: https://crypto-crats.herokuapp.com [KrishiMitra]
 
 
