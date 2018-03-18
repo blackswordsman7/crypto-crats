@@ -1,5 +1,7 @@
 # Team: crypto-crat
 
+## Krishi Mitra
+
 ### Idea at glance
 
 We aim to revolutionise the farming sector by introducing an investment-token based model which will help farmers in raising capital against their land and production output value. We aim to create a decetralized echo-system for agriculture. 
