@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
 import Nav from '../components/Nav';
-import Web3 from 'web3';
-import { Card, Subheader } from 'react-md';
+import { Card } from 'react-md';
 import {
   Button,
-  FontIcon,
-  SVGIcon,
   TextField,
 } from 'react-md';
 
 class Farmer extends Component {
   state = {
-    username: "",
+    user: "",
     requirements: "",
     price: "2131",
     eq_rs: "31331",
     products: [],
     transactions: []
+  }
+
+  componentDidMount() {
+    let data = localStorage.getItem('user_data')
+    if (!data) {
+      this.props.history.push('/')
+    }
+    this.setState({user: JSON.parse(data)})
   }
 
   requirement_submit(e) {
@@ -26,8 +31,10 @@ class Farmer extends Component {
     return (
       <div style={{height: '100vh', background: 'linear-gradient(217deg, rgba(0,255,0,.8), rgba(255,0,0,0) 70.71%)'}}>
         <Nav/>
-        <Card style={{margin: '10px', maxWidth: '400px', margin: 'auto', marginTop: '20px', textAlign: 'center', padding: '10px'}}>
+        <Card style={{maxWidth: '400px', margin: 'auto', marginTop: '20px', textAlign: 'center', padding: '10px'}}>
           <b>{this.state.price}</b> Aadhar Coin = <b>Rs. {this.state.eq_rs}</b>
+          <br/>
+          Address: <b>{this.state.user.address}</b>
         </Card>
         <div style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
           <Card style={{margin: '10px',minWidth: '300px', marginTop: '20px', padding: '10px'}}>

@@ -2,5 +2,4 @@ flask
 flask-restful
 flask_cors
 PyJWT
-json
 pymongo

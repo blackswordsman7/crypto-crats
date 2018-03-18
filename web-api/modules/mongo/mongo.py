@@ -9,5 +9,5 @@ class PyMongo:
     def insert(self, data):
         return self.collection.insert(data)
 
-    def find(key):
-    	return self.collections.find(key)
+    def find_one(self, key):
+    	return self.collection.find_one(key)

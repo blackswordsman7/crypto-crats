@@ -9,8 +9,9 @@ app = Flask(__name__)
 api = Api(app, prefix="/v1")
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 api.add_resource(Register, '/user/register')
-api.add_resource(Login, '/user/register')
+api.add_resource(Login, '/user/login')
 
 
 if __name__ == "__main__":
-	app.run(port=8000, debug=False)
+	port = int(os.environ.get('PORT', 8000))
+	app.run(host='0.0.0.0', port=port, debug=False)

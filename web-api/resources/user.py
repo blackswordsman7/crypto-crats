@@ -20,6 +20,8 @@ class Register(Resource):
 				"entity": str(args['entity']),
 				"address": str(args['address'])
 			}
+			if db.find_one({'address': str(args['address'])}):
+				return {'message': "User Already exists"}, 401
 			db.insert(data)
 			return {'message': 'ok'}
 		except Exception as e:
@@ -37,10 +39,12 @@ class Login(Resource):
 				"username": str(args['username']),
 				"pswd": str(args['password'])
 			}
-			r_data = db.find(data)
+			r_data = db.find_one(data)
 			r_data.pop('pswd')
+			r_data.pop('_id')
 			if r_data:
 				return {'data': r_data}
-			return {'message': 'Invalid User name or Password'}
-		except:
-			return {'message': 'error'}
+			return {'message': 'Invalid User name or Password'}, 403
+		except Exception as e:
+			print(e)
+			return {'message': 'An error ocurred'}

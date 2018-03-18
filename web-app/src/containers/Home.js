@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import {
     Card,
-    Button, 
-    Divider,
+    Button,
     TextField,
     SelectField
 }  from 'react-md';
-import Web3 from 'web3';
+import axios from 'axios';
 import { LinearProgress } from 'react-md';
 
 const select_items = [{
@@ -37,9 +36,34 @@ class Home extends Component {
 
   login(e) {
     e.preventDefault();
-    this.setState({loading: true})    
-    alert(JSON.stringify(this.state))
-  }
+    this.setState({loading: true, error: ''})
+    if (this.state.username.trim() && this.state.password.trim()) {
+      axios.post("https://cryptocrats.herokuapp.com/v1/user/login", 
+      {
+        username: this.state.username, 
+        password: this.state.password
+      })
+      .then(data => {
+        localStorage.setItem("loggedIn", 1);
+        localStorage.setItem("user_data", JSON.stringify(data.data.data));
+        console.log(data)
+        this.props.history.push(`/${data.data.data.entity}`);
+      })
+      .catch(err => {
+        console.log(err)
+        this.setState({loading: false})
+        if (err.response) {
+          this.setState({error: err.response.data.message})
+        } else {
+          this.setState({error: "An error occured"})
+        }
+      })
+    } else {
+        this.setState({loading: false})
+        this.setState({error: "Please enter username and password"})
+      }
+  } 
+
 
   componentDidMount() {
     if (window.web3 && window.web3.currentProvider.isMetaMask) {
@@ -50,13 +74,42 @@ class Home extends Component {
       this.setState('MetaMask account not detected :(');
     }
   }
+
   signup(e) {
     e.preventDefault();    
-    alert(JSON.stringify(this.state))
-  }
+    this.setState({loading: true, error: ''})
+    if (this.state.address && this.state.s_username.trim() && this.state.s_password.trim()) {
+      axios.post("https://cryptocrats.herokuapp.com/v1/user/register", 
+      {
+        username: this.state.s_username, 
+        password: this.state.s_password,
+        name: this.state.s_name,
+        entity: this.state.s_type,
+        address: this.state.address
+      })
+      .then(data => {
+        localStorage.setItem("loggedIn", 1);
+        this.props.history.push(`/${this.state.s_type}`);
+      })
+      .catch(err => {
+        console.log(err)
+        this.setState({loading: false})
+        if (err.response.data) {
+          this.setState({error: err.response.data.message})
+        } else {
+          this.setState({error: "An error occured"})
+        }
+      })
+    } else {
+        this.setState({loading: false})
+        this.setState({error: "An error occurred"})
+      }
+  } 
 
   render() {
     return (
+      <div>
+      <h4 style={{textAlign: 'center', marginTop: '20px'}}>Krishi Mitra: A decentralized eco-system</h4>
       <div style={{display: 'flex', justifyContent:'center', flexWrap: 'wrap',  height: '100vh', background: 'linear-gradient(217deg, rgba(0,255,0,.8), rgba(255,0,0,0) 70.71%)'}}>
       <p style={{color: '#ff0000', textAlign: 'center'}}>{this.state.error}</p>
       <div hidden={!this.state.loading}>
@@ -81,7 +134,6 @@ class Home extends Component {
             value={this.state.password}
             onChange={data => this.setState({password: data})}
           />
-          <p style={{color: '#ff0000'}}>{this.state.error}</p>
           <div className="md-text-center" style={{marginTop: '20px'}}>
             <Button
             type="submit" 
@@ -143,6 +195,7 @@ class Home extends Component {
           </form>
         </div>
       </Card>
+      </div>
       </div>
     );
   }
