@@ -4,7 +4,7 @@
 
 ### Idea at glance
 
-We aim to revolutionise the farming sector by introducing an investment-token based model which will help farmers in raising capital against their land and production output value. We aim to create a decetralized echo-system for agriculture. 
+We aim to revolutionise the farming sector by introducing an investment-token based model which will help farmers in raising capital against their land and production output value. We aim to create a decentralised eco-system for agriculture. 
 
 ![image_model](https://github.com/Parassharmaa/crypto-crats/blob/master/docs/model-diagram%5BINITIAL%20STATE%5D.jpg)
 
