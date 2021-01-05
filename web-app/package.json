@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "google-map-react": "^0.32.0",
     "js-file-download": "^0.4.1",
     "react": "^16.2.0",
