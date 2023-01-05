@@ -12,14 +12,14 @@
     "react-infinite-scroll-component": "^3.0.2",
     "react-md": "^1.2.11",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
+    "react-scripts": "5.0.1",
     "web3": "^0.20.6",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.2",
-    "react-scripts": "1.0.17"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./node_modules src/ -o src/",
